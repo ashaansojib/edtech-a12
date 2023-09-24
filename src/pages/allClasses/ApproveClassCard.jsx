@@ -7,16 +7,17 @@ const ApproveClassCard = ({ item, handleSelect }) => {
     const { _id, course, name, price, image, seate, selected } = item;
     const [role, setRole] = useState("");
     axios.get(`https://b7a12-summer-camp-server-side-ashaansojib-ashaansojib.vercel.app/current-user/${user?.email}`)
-    .then( res =>{
-        // console.log(res.data)
-        setRole(res.data?.role)
-    })
-    .catch( error =>{
-        console.log(error)
-    })
+        .then(res => {
+
+            setRole(res.data?.role)
+        })
+        .catch(error => {
+        })
     return (
-        <div className={`card w-[270px] rounded-b-none border ${seate === 0 && 'border-red-500'}`}>
-            <figure><img src={image} className='w-full h-full' alt="Shoes" /></figure>
+        <div className={`card rounded-b-none border ${seate === 0 && 'border-red-500'}`}>
+            <figure className='h-[180px]'>
+                <img src={image} className='w-full h-full' alt="Image not found" />
+            </figure>
             <div className="p-2">
                 <p className='text-xl py-1'>{course}</p>
                 <h2 className='text-slate-500'>{name}</h2>

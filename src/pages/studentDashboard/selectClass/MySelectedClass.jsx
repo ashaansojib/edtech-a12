@@ -13,7 +13,7 @@ const MySelectedClass = () => {
         const res = await axiosSecure.get(`my-selected-class/${user?.email}`)
         return res.data;
     });
-    // console.log(selectClass)
+    
     if (selectClass.length === 0) {
         return <div className='my-container p-40 text-center'><h2 className='text-red-500'>Data Is Empty</h2><FadeLoader color="#36d7b7" /></div>
     }
@@ -31,7 +31,7 @@ const MySelectedClass = () => {
                 axiosSecure
                     .delete(`selected-class-delete/${id}`)
                     .then(res => {
-                        console.log(res);
+                        
                         Swal.fire(
                             'Deleted!',
                             'Your file has been deleted.',
@@ -41,7 +41,7 @@ const MySelectedClass = () => {
                         });
                     })
                     .catch(error => {
-                        console.log(error);
+                        
                     });
             }
         });

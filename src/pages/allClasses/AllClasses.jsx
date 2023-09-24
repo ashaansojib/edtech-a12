@@ -21,9 +21,9 @@ const AllClasses = () => {
     if (approveClass.length === 0) {
         return <div className='my-container py-40 text-center'><SyncLoader color="#36d7b7" /></div>
     }
-    // console.log(user)
+
     const handleSelect = (id, item) => {
-        // console.log(item)
+
         const { _id, course, email, image, name, price } = item;
         const savedClass = {
             _id: _id,
@@ -75,7 +75,6 @@ const AllClasses = () => {
                 }
             })
             .then(data => {
-                console.log(data);
                 if (data.message === 'Data already exists') {
                     alert('Data already exists in the database');
                 } else {
@@ -83,55 +82,19 @@ const AllClasses = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+
                 if (error instanceof TypeError) {
                     alert('An error occurred while selecting the class');
                 } else {
                     alert('This class already added you');
                 }
             });
-
-
-        // axiosSecure.post('new/select-classes', savedClass)
-        // .then( res =>{
-        //     console.log(res.data)
-        // })
-        // fetch('https://b7a12-summer-camp-server-side-ashaansojib-ashaansojib.vercel.app/new/select-classes', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(savedClass)
-        // })
-        // .then( res =>{
-        //     console.log(res)
-        // })
-        // .catch(error =>{
-        //     console.log(error)
-        // })
-
-
-        // axiosSecure.patch(`select-course/${id}`)
-        //     .then(data => {
-        //         toast.success('🦄 Done You Selected This', {
-        //             position: "top-center",
-        //             autoClose: 5000,
-        //             hideProgressBar: false,
-        //             closeOnClick: true,
-        //             pauseOnHover: true,
-        //             draggable: true,
-        //             progress: undefined,
-        //             theme: "light",
-        //         });
-        //         refetch();
-        //     });
     }
-    // console.log(approveClass[0])
     return (
         <div className='my-container'>
             <h2 className='text-3xl font-medium flex items-center gap-4 py-4'>Best Learning Course <span className='text-green-500'><FaArrowRight></FaArrowRight></span></h2>
             <ToastContainer />
-            <div className='grid grid-cols-3 gap-2'>
+            <div className='grid grid-cols-3 gap-6'>
                 {
                     approveClass.map(item => <ApproveClassCard
                         key={item._id}

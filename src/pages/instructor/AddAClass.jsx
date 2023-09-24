@@ -27,7 +27,6 @@ const AddAClass = () => {
             name: instructor,
             email: mail,
         }
-        // console.log/(classInfo)
         axiosSecure.post('classes', classInfo)
         .then( res =>{
             if(res.data.acknowledged){
@@ -42,7 +41,7 @@ const AddAClass = () => {
             form.reset();
         })
         .catch( error =>{
-            console.log(error)
+            
         })
     }
     

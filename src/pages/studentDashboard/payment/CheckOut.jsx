@@ -17,7 +17,6 @@ const CheckOut = ({ price, id }) => {
     useEffect(() => {
         axiosSecure.post('create-payment-intent', { price })
             .then(res => {
-                // console.log(res.data.clientSecret)
                 setClientSecret(res.data.clientSecret)
             })
     }, [price, axiosSecure])
@@ -36,11 +35,11 @@ const CheckOut = ({ price, id }) => {
             card
         })
         if (error) {
-            console.log(error)
+            
             setError(error.message)
         }
         else {
-            // console.log('payment methods', paymentMethod)
+            
             setError("")
         }
         const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(

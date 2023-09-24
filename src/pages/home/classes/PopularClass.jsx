@@ -13,7 +13,7 @@ const PopularClass = () => {
     return (
         <div className='my-container my-10'>
             <h2 className='text-3xl font-medium flex items-center gap-4'>Our Top Courses <span className='text-green-500'><FaArrowRight></FaArrowRight></span></h2>
-            <div className='grid lg:grid-cols-3 justify-center items-center lg:p-10 gap-2 p-4'>
+            <div className='grid lg:grid-cols-3 p-2 md:p-10 justify-center items-center gap-6 '>
                 {
                     popularClass.map(classData => <PopularClassCard
                         key={classData._id}

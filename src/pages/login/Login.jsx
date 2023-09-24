@@ -17,11 +17,11 @@ const Login = () => {
         userLogin(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser)
+                
                 navigate("/")
             })
             .catch(error => {
-                // console.log(error)
+                
                 setError(error.message)
             })
         reset()
@@ -37,14 +37,14 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="Your Email" {...register("email", { required: true })} name='email' className="input input-bordered" />
+                        <input type="email" defaultValue="ashaduzzamansojib67@gmail.com" placeholder="Your Email" {...register("email", { required: true })} name='email' className="input input-bordered" />
                         {errors.email && <span className="text-red-600 text-left">Email must Valid</span>}
                     </div>
                     <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type={showPassword ? 'text' : 'password'} {...register("password", {
+                        <input defaultValue="9080Sojib@" type={showPassword ? 'text' : 'password'} {...register("password", {
                             required: true, minLength: 8,
                             maxLength: 20,
                         })} placeholder="Type Password" className="input input-bordered" />

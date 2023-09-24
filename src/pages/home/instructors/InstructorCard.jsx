@@ -9,8 +9,8 @@ const InstructorCard = ({instructor}) => {
     const [rating, setRating] = useState(5)
     return (
         <div className='p-4  rounded-md border'>
-            <div className='rounded-md bg-gray-200'>
-                <img className="h-full" src={photo} alt="" />
+            <div className='rounded-md bg-gray-200 h-[180px] w-[287px]'>
+                <img className="w-full h-full" src={photo} alt="" />
             </div>
             <div className='lg:space-y-2 py-2 border-b'>
                 <h2 className='text-xl font-semibold'>{name}</h2>

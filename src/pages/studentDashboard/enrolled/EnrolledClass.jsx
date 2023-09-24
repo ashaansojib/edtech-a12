@@ -11,7 +11,7 @@ const EnrolledClass = () => {
         const res = await axiosSecure.get(`payments?email=${user?.email}`)
         return res.data;
     });
-    // console.log(enrolled)
+    
     return (
         <div>
             <div className="overflow-x-auto">

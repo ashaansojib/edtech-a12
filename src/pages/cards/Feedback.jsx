@@ -31,7 +31,6 @@ const Feedback = () => {
               })
         })
     }
-    // console.log(email)
     return (
         <div className='mx-auto w-[500px] h-[300px] mt-4'>
             <textarea onChange={getFeedBackValue} className="textarea textarea-bordered w-full h-full" placeholder="Write your feedback why you dont approved this class"></textarea>

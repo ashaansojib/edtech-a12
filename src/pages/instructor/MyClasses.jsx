@@ -10,7 +10,7 @@ const MyClasses = () => {
     const [axiosSecure] = useAxiosSecure();
     const {data: classes = []} = useQuery(['classes'], async() =>{
         const res = await axiosSecure.get(`classes/instructor/${user?.email}`)
-        // console.log(res.data)
+      
         return res.data;
     });
     return (

@@ -9,13 +9,13 @@ import YourClass from '../bestClasses/YourClass';
 
 const Home = () => {
     useTitle("Home")
-    const { scrollYProgress } = useScroll();
+    // const { scrollYProgress } = useScroll();
     return (
         <>
-            <motion.div
+            {/* <motion.div
                 className="progress-bar"
                 style={{ scaleX: scrollYProgress }}
-            />
+            /> */}
             <Header></Header>
             <PopularClass></PopularClass>
             <About></About>

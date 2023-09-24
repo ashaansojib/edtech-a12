@@ -11,8 +11,6 @@ const Dashboard = () => {
     const { user } = useAuth();
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
-    // console.log(isAdmin, user)
-    // console.log(user)
     const location = useLocation();
     return (
         <div className='bg-slate-200 max-w-screen-xl mx-auto grid grid-cols-4 gap-2'>
