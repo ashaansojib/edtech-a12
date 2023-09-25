@@ -17,6 +17,7 @@ import MySelectedClass from "../pages/studentDashboard/selectClass/MySelectedCla
 import Payment from "../pages/studentDashboard/payment/Payment";
 import EnrolledClass from "../pages/studentDashboard/enrolled/EnrolledClass";
 import Feedback from "../pages/cards/Feedback";
+import InstructorDetail from "../pages/details/InstructorDetail";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/instructor-details/:id',
+                element: <InstructorDetail />,
+                loader: ({params}) => fetch(`https://b7a12-summer-camp-server-side-ashaansojib.vercel.app/user-details/${params.id}`)
             }
         ]
     },

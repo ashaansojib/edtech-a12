@@ -10,7 +10,9 @@ const Instructors = () => {
         const res = await axiosSecure.get('instructor-user')
         return res.data;
     })
-    
+    // console.log(instructors)
+    // const filterUser = instructors?.filter( user => user._id === '6486eed0037176a0e47bd8da');
+    // console.log(filterUser)
     return (
         <div className='my-container py-10'>
             <SectionTitle heading="Our Popular Instructors" subHeading="My English teacher is a very skillful person. Everybody in my class is fond of him. He takes the classes in a funny and interesting way. We love English a lot; he encourages all of us to speak in English. Only because of him, we understood the beauty of this wonderful language."></SectionTitle>

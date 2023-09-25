@@ -25,7 +25,7 @@ const InstructorCard = ({instructor}) => {
                 <p className='text-gray-600 flex items-center gap-2 text-sm'> <span><FaDollarSign></FaDollarSign></span> $150</p>
             </div>
             <div>
-                <Link to="/"><button className='btn-sm btn-outline w-full border-orange-400 border rounded-md'>View Profile</button></Link>
+                <Link to={`/instructor-details/${_id}`}><button className='btn-sm btn-outline w-full border-orange-400 border rounded-md'>View Profile</button></Link>
             </div>
         </div>
     );
