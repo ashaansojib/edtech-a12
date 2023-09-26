@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PopularClassCard = ({ classData }) => {
     const { name, image, price, course, _id } = classData;
+    console.log(_id)
     return (
         <div className="card rounded-b-none hover:border-sky-600 border">
             <figure className='h-[180px]'>
@@ -13,7 +14,7 @@ const PopularClassCard = ({ classData }) => {
                 <h2 className='text-slate-500'>{name}</h2>
                 <div className='flex justify-between items-center'>
                     <p>BDT : {price}</p>
-                    <button className='active'><Link to={`/class-details/:${_id}`}>More</Link></button>
+                    <button className='active'><Link to={`/class-details/ ${_id}`}>More</Link></button>
                 </div>
             </div>
         </div>
