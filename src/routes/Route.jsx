@@ -48,19 +48,19 @@ const router = createBrowserRouter([
             {
                 path: '/instructor-details/:id',
                 element: <InstructorDetail />,
-                loader: ({params}) => fetch(`https://b7a12-summer-camp-server-side-ashaansojib.vercel.app/user-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a12-summer-camp-server-side-ashaansojib.vercel.app/user-details/${params.id}`)
             },
             {
                 path: '/class-details/:id',
                 element: <ClassDetails />,
-                loader: ({params}) => fetch(`https://b7a12-summer-camp-server-side-ashaansojib.vercel.app/class-details/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a12-summer-camp-server-side-ashaansojib.vercel.app/class-details/${params.id}`)
             }
         ]
     },
     {
         path: '/dashboard',
         element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
-        children:[
+        children: [
             {
                 path: '/dashboard/manage-users',
                 element: <AdminRoute><ManageUser></ManageUser></AdminRoute>
