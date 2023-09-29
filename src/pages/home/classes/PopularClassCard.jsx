@@ -13,7 +13,7 @@ const PopularClassCard = ({ classData }) => {
                 <h2 className='text-slate-500'>{name}</h2>
                 <div className='flex justify-between items-center'>
                     <p>BDT : {price}</p>
-                    <button className='active'><Link to={`/class-details/${_id}`}>More</Link></button>
+                    <Link className='active' to={`/class-details/${_id}`}>More</Link>
                 </div>
             </div>
         </div>

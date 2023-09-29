@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   --black: #111111;
   --white: #fdfdfd;
@@ -27,98 +28,131 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
 }
-img{
-    max-width: 100%;
-    max-height: 100%;
+
+img {
+  max-width: 100%;
+  max-height: 100%;
 }
-.my-container{
-    @apply max-w-screen-lg mx-auto;
+
+/* #FF442B */
+/* #009F79 */
+.my-container {
+  @apply max-w-[1150px] mx-auto;
 }
-.my-btn{
-    @apply inline py-4 px-6 text-center uppercase text-white rounded-lg bg-sky-400 hover:bg-[#66cfa9]
+
+.my-btn {
+  @apply inline py-4 px-6 text-center uppercase text-white hover:text-black font-medium rounded-lg bg-[#009F79] hover:bg-white
 }
-.default{
-    @apply py-2 px-4 text-[#848A87] font-medium;
+
+.default {
+  @apply py-2 px-4 text-[#848A87] hover:text-[#009F79] font-semibold;
 }
-.active{
-    @apply bg-[#8DC63F] py-2 px-4 text-white rounded-lg font-medium;
+
+.active {
+  @apply bg-[#009F79] py-2 px-4 text-white rounded-lg font-semibold;
 }
+
 /* banner slider css */
-.top-banner{
-    background-color: transparent;
-    background-image: linear-gradient(90deg, #FFFFFF 0%, #DEEFF6 100%);
+.my-badge {
+  @apply text-gray-100 uppercase pt-3
 }
-.my-badge{
-    background-color: rgb(255, 255, 255);
-    color: rgb(76, 94, 120);
-    box-shadow: rgba(46, 63, 99, 0.15) 5px 4px 13px 0px;
-    border-radius: 15px;
-    width: 220px;
-    text-align: center;
+
+.slider-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('https://dexen.smartdemowp.com/wp-content/uploads/2019/10/slider-1-2.jpg');
 }
-.mySwiper {
-    width: 100%;
-    height: 400px;
-  }
-  .autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
-  }
-  
-  .autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
-  }
-  /* dark lite loggel */
-  .toggle-checkbox {
-    appearance: none;
-    width: 40px;
-    height: 20px;
-    background-color: #999999;
-    outline: none;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .toggle-checkbox:checked {
-    background-color: #4f46e5;
-  }
-  /* frammer scrool bar */
-  .toggle-label {
-    display: block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: white;
-    position: absolute;
-  }
-  .progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: var(--red);
-    transform-origin: 0%;
-  }
+
+.slider-bg2 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('https://dexen.smartdemowp.com/wp-content/uploads/2019/10/slider-1-1.jpg');
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+/* dark lite loggel */
+.toggle-checkbox {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background-color: #999999;
+  outline: none;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-checkbox:checked {
+  background-color: #4f46e5;
+}
+
+/* frammer scrool bar */
+.toggle-label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next {
+  display: none !important;
+}
+
+.f-content:hover .f-img-bg {
+  background-color: #FFDBE1;
+  transform: scale(1.2);
+}
+
+.f-img-bg {
+  height: 95px;
+  width: 95px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}

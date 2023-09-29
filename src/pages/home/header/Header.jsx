@@ -19,56 +19,48 @@ const Header = () => {
     };
     return (
         <header className='top-banner'>
-            <div className="my-container">
-                <Swiper
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 5000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    onAutoplayTimeLeft={onAutoplayTimeLeft}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div className='lg:grid grid-cols-2 justify-between items-center gap-4'>
-                            <div>
-                                <p className='my-badge'>ONLY BEST LIFECOACHES</p>
-                                <h2 className='text-6xl font-bold my-4'>We Provide Service <span className='text-sky-400'>4 Years</span></h2>
-                                <p>English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve</p>
-                                <button className='mt-4 my-btn'>Learn More</button>
-                            </div>
-                            <div className='lg:flex justify-end items-center'>
-                                <img className='lg:w-[400px]' src="/slider-banner.png" alt="" />
-                            </div>
+            <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 7000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                onAutoplayTimeLeft={onAutoplayTimeLeft}
+                className="md:h-[550px] w-full"
+            >
+                <SwiperSlide>
+                    <div className='slider-bg h-full md:p-10 flex justify-center items-center'>
+                        <div className='md:w-3/4 text-center'>
+                            <p className='my-badge'>ONLY BEST LIFECOACHES</p>
+                            <h2 className='md:text-6xl text-3xl font-bold mb-4 text-white'>We Provide Service 4 Years</h2>
+                            <p className='text-slate-100'>English texts for beginners to practice reading and comprehension online and for free. Practicing your comprehension of written English will both improve. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolore, deserunt voluptatum repudiandae ullam nostrum sed iure assumenda commodi itaque?</p>
+                            <button className='m-4 my-btn'>Learn More</button>
                         </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className='lg:grid grid-cols-2 justify-between items-center gap-4'>
-                            <div>
-                                <p className='my-badge'>ONLY BEST LIFECOACHES</p>
-                                <h2 className='text-6xl font-bold my-4'>We Teach You Take <span className='text-sky-400'>Life Control</span></h2>
-                                <p>Reading practice to help you understand texts with a wide vocabulary where you ... Our online English classes feature lots of useful learning materials.</p>
-                                <button className='mt-4 my-btn'>Learn More</button>
-                            </div>
-                            <div className='flex justify-end items-center'>
-                                <img className='lg:w-[400px]' src="https://unicoach.wgl-demo.net/wp-content/uploads/2020/10/home1_slider1.jpg" alt="" />
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <div className="autoplay-progress" slot="container-end">
-                        <svg viewBox="0 0 48 48" ref={progressCircle}>
-                            <circle cx="24" cy="24" r="20"></circle>
-                        </svg>
-                        <span ref={progressContent}></span>
                     </div>
-                </Swiper>
-            </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='slider-bg2 h-full md:p-10 flex justify-center items-center'>
+                        <div className='md:w-3/4 text-center'>
+                            <p className='my-badge'>ONLY BEST LIFECOACHES</p>
+                            <h2 className='md:text-6xl text-3xl font-bold mb-4 text-white'>We Teach You Take Life Control</h2>
+                            <p className='text-slate-100'>Reading practice to help you understand texts with a wide vocabulary where you ... Our online English classes feature lots of useful learning materials. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, ut. Molestiae eius voluptas in deserunt cum totam laudantium accusantium doloribus rem, minima consectetur nulla fugiat sunt nemo quibusdam perferendis. Quae.</p>
+                            <button className='m-4 my-btn'>Learn More</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <div className="autoplay-progress" slot="container-end">
+                    <svg viewBox="0 0 48 48" ref={progressCircle}>
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span ref={progressContent}></span>
+                </div>
+            </Swiper>
         </header>
     );
 };

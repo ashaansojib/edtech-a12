@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import ClassesCard from '../cards/ClassesCard';
 import useTitle from '../../hooks/useTitle';
 import Swal from 'sweetalert2';
+import { SyncLoader } from 'react-spinners';
 
 const ManageClasses = () => {
     useTitle("Manage Classes")
@@ -12,19 +13,19 @@ const ManageClasses = () => {
         const res = await axiosSecure('admin/classes')
         return res.data;
     });
-    const handleApproved = (id) =>{
+    const handleApproved = (id) => {
         axiosSecure.patch(`classes/admin/${id}`)
-        .then(data => {
-            Swal.fire('This Class Approved By Admin')
-            refetch();
-        })
+            .then(data => {
+                Swal.fire('This Class Approved By Admin')
+                refetch();
+            })
     }
-    const handleDeny = (id) =>{
+    const handleDeny = (id) => {
         axiosSecure.patch(`classe/admin/${id}`)
-        .then(data => {
-            Swal.fire('Denied this class by Admin')
-            refetch();
-        })
+            .then(data => {
+                Swal.fire('Denied this class by Admin')
+                refetch();
+            })
     }
     return (
         <div className="overflow-x-auto">
@@ -43,12 +44,12 @@ const ManageClasses = () => {
                 </thead>
                 <tbody>
                     {
-                        allClasses.map(classItem => <ClassesCard 
-                            key={classItem._id} 
+                        allClasses.length === 0 ? <div className='my-container py-40 text-center'><SyncLoader color="#36d7b7" /></div> : allClasses.map(classItem => <ClassesCard
+                            key={classItem._id}
                             classItem={classItem}
                             handleDeny={handleDeny}
                             handleApproved={handleApproved}
-                            ></ClassesCard>)
+                        ></ClassesCard>)
                     }
                 </tbody>
             </table>

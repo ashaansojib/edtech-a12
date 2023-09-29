@@ -6,6 +6,7 @@ import PopularClass from './classes/PopularClass';
 import {motion, useScroll } from 'framer-motion';
 import About from '../about/About';
 import YourClass from '../bestClasses/YourClass';
+import Featured from '../extraPage/Featured';
 
 const Home = () => {
     useTitle("Home")
@@ -17,6 +18,7 @@ const Home = () => {
                 style={{ scaleX: scrollYProgress }}
             /> */}
             <Header></Header>
+            <Featured />
             <PopularClass></PopularClass>
             <About></About>
             <Instructors></Instructors>

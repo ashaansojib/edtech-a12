@@ -4,42 +4,43 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useTitle from '../../hooks/useTitle';
 import Swal from 'sweetalert2';
+import { SyncLoader } from 'react-spinners';
 
 const ManageUser = () => {
     useTitle("Manage Users")
     const [axiosSecure] = useAxiosSecure();
-    const {data: users = [], refetch} = useQuery(['users'], async() =>{
+    const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await axiosSecure('users')
         return res.data;
     });
     // make a user as admin
-    const handleAdmin = (id) =>{
+    const handleAdmin = (id) => {
         axiosSecure.patch(`users/admin/${id}`)
-        .then(data => {
-            Swal.fire('The User Is Admin Now!')
-            refetch();
-        })
+            .then(data => {
+                Swal.fire('The User Is Admin Now!')
+                refetch();
+            })
     }
     // const handle delete
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
         fetch(`https://b7a12-summer-camp-server-side-ashaansojib-ashaansojib.vercel.app/users/${id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data => {
-            Swal.fire('The User Permanently Deleted!')
-            refetch();
-        })
+            .then(res => res.json())
+            .then(data => {
+                Swal.fire('The User Permanently Deleted!')
+                refetch();
+            })
     }
-    const handleInstructor = id =>{
+    const handleInstructor = id => {
         fetch(`https://b7a12-summer-camp-server-side-ashaansojib-ashaansojib.vercel.app/users/instructor/${id}`, {
             method: 'PATCH'
         })
-        .then(res => res.json())
-        .then(data => {
-            Swal.fire('The User Is Instructor Now!')
-            refetch();
-        })
+            .then(res => res.json())
+            .then(data => {
+                Swal.fire('The User Is Instructor Now!')
+                refetch();
+            })
     }
     return (
         <div className="overflow-x-auto">
@@ -56,13 +57,13 @@ const ManageUser = () => {
                 </thead>
                 <tbody>
                     {
-                        users.map( (user, index) => <UsersCard 
-                        key={user._id} 
-                        user={user}
-                        handleAdmin={handleAdmin}
-                        handleDelete={handleDelete}
-                        handleInstructor={handleInstructor}
-                        serial={index}></UsersCard>)
+                        users.length === 0 ? <div className='my-container py-40 text-center'><SyncLoader color="#36d7b7" /></div> : users.map((user, index) => <UsersCard
+                            key={user._id}
+                            user={user}
+                            handleAdmin={handleAdmin}
+                            handleDelete={handleDelete}
+                            handleInstructor={handleInstructor}
+                            serial={index}></UsersCard>)
                     }
                 </tbody>
             </table>
