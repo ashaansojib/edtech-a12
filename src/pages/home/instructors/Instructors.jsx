@@ -16,7 +16,7 @@ const Instructors = () => {
     return (
         <div className='my-container py-10'>
             <SectionTitle heading="Our Popular Instructors" subHeading="My English teacher is a very skillful person. Everybody in my class is fond of him. He takes the classes in a funny and interesting way. We love English a lot; he encourages all of us to speak in English. Only because of him, we understood the beauty of this wonderful language."></SectionTitle>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 p-4 gap-4'>
+            <div className='grid lg:grid-cols-5 md:grid-cols-3 p-8 gap-4'>
                 {
                     instructors.map(instructor => <InstructorCard
                     key={instructor._id}

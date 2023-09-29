@@ -156,3 +156,21 @@ img {
   background-color: #fff;
   transition: transform 0.3s ease;
 }
+.background-effect {
+  width: 100%;
+  height: 0;
+  background-color: #009F79;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: height 0.3s ease-in-out;
+  opacity: 0.5;
+  color: #fff
+}
+.member-div{
+  @apply border rounded-md pb-2 ;
+}
+.member-div:hover .background-effect {
+  height: 100%;
+  color: #fff;
+}

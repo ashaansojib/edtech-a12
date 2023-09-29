@@ -21,7 +21,7 @@ const InstructorDetail = () => {
                 </div>
                 <div className='py-2 col-span-2'>
                     <h2 className='text-3xl font-semibold uppercase'>{name}</h2>
-                    <Rating style={{ maxWidth: 100 }} value={rating} onChange={setRating}></Rating>
+                    {/* <Rating style={{ maxWidth: 100 }} value={rating} onChange={setRating}></Rating> */}
                     <p className='italic text-gray-800 pb-3'>Position - {role}</p>
                     <p>"As an instructor, my passion is to inspire and empower others through education. I thrive on the opportunity to share knowledge, ignite curiosity, and help individuals reach their full potential. I believe that learning is a lifelong journey, and I'm dedicated to creating engaging and enriching learning experiences for my students. Whether it's in a classroom, online, or through any platform, I am committed to making a positive impact on the lives of those I teach, fostering a love for learning, and helping them achieve their goals."</p>
                 </div>

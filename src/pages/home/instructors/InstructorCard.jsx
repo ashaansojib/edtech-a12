@@ -1,31 +1,17 @@
-import { FaLocationArrow, FaCalendar, FaDollarSign } from "react-icons/fa";
-import { Rating } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const InstructorCard = ({instructor}) => {
-    const {_id, name, email, photo, role} = instructor;
-    const [rating, setRating] = useState(5)
+const InstructorCard = ({ instructor }) => {
+    const { _id, name, photo, role } = instructor;
     return (
-        <div className='p-4  rounded-md border'>
-            <div className='rounded-md bg-gray-200 h-[180px] w-[287px]'>
-                <img className="w-full h-full" src={photo} alt="" />
+        <div className='member-div'>
+            <div className='flex justify-center items-center py-3 overflow-hidden relative'>
+                <div class="background-effect"></div>
+                <img className="w-[150px] h-[150px] rounded-full border" src={photo} alt="" />
             </div>
-            <div className='lg:space-y-2 py-2 border-b'>
-                <h2 className='text-xl font-semibold'>{name}</h2>
-                <p className='text-gray-600'>{role} - Learn English</p>
-                <div>
-                    <Rating style={{ maxWidth: 110 }} value={rating} onChange={setRating}></Rating>
-                </div>
-            </div>
-            <div className='lg:space-y-2 py-2'>
-                <p className='text-gray-600 flex items-center gap-2 text-sm'> <span><FaLocationArrow></FaLocationArrow></span> Dhanmondi, Dhaka, Bangladesh</p>
-                <p className='text-gray-600 flex items-center gap-2 text-sm'> <span><FaCalendar></FaCalendar></span> Available On Mon, 22 December</p>
-                <p className='text-gray-600 flex items-center gap-2 text-sm'> <span><FaDollarSign></FaDollarSign></span> $150</p>
-            </div>
-            <div>
-                <Link to={`/instructor-details/${_id}`}><button className='btn-sm btn-outline w-full border-orange-400 border rounded-md'>View Profile</button></Link>
+            <div className="text-center">
+                {/* <p className='text-gray-600 py-2'>Position - {role}</p> */}
+                <h3 className='text-xl font-semibold'>{name}</h3>
+                <Link className="default my-2" to={`/instructor-details/${_id}`}>Read More</Link>
             </div>
         </div>
     );
