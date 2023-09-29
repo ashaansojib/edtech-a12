@@ -7,7 +7,7 @@ const Featured = () => {
             <div>
                 <h1 className='font-semibold text-3xl'>Our top Featured Solutions</h1>
                 <p className='py-3 text-gray-700'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam, a.</p>
-                <button className='btn btn-outline'>Get Started Free</button>
+                <Link to="/about" className='active'>Get Started</Link>
             </div>
             <div className='f-content py-4 bg-[#F8FBFF]'>
                 <div className='flex justify-center items-center'>

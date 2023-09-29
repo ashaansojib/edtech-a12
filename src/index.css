@@ -156,6 +156,7 @@ img {
   background-color: #fff;
   transition: transform 0.3s ease;
 }
+
 .background-effect {
   width: 100%;
   height: 0;
@@ -167,10 +168,14 @@ img {
   opacity: 0.5;
   color: #fff
 }
-.member-div{
-  @apply border rounded-md pb-2 ;
+
+.member-div {
+  @apply border rounded-md pb-2;
 }
+
 .member-div:hover .background-effect {
   height: 100%;
   color: #fff;
 }
+
+/* about me css */

@@ -5,7 +5,7 @@ const InstructorCard = ({ instructor }) => {
     return (
         <div className='member-div'>
             <div className='flex justify-center items-center py-3 overflow-hidden relative'>
-                <div class="background-effect"></div>
+                <div className="background-effect"></div>
                 <img className="w-[150px] h-[150px] rounded-full border" src={photo} alt="" />
             </div>
             <div className="text-center">
